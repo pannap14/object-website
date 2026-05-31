@@ -1,0 +1,122 @@
+body{
+    margin:0;
+    padding:40px;
+    background:#fafce0;
+    font-family:Arial, sans-serif;
+    overflow-x:hidden;
+}
+
+/* KONTEJNER */
+
+.canvas{
+    display:flex;
+    flex-direction:column;
+    gap:220px;
+    width:100%;
+}
+
+/* STICKY TEXT */
+
+.text{
+    position:sticky;
+    top:20px;
+
+    max-width:300px;
+    line-height:1.4;
+}
+
+/* BLOKY (tvé originální beze změny) */
+
+.t1, .t2, .t3, .t4, .t5, .t6, .t7, .t8, .t9, .t10, .t11, .t12, .t13, .t14, .t15{
+    font-family: "RL-Zeta-Mono";
+    color:#2a2a2a;
+}
+
+/* jednotlivé pozice (NECHÁNO jak máš) */
+
+.t1{font-size:16px; text-align:justify; margin-left:150px; letter-spacing:3px; max-width:570px;}
+.t2{font-size:16px; text-align:justify; align-self:flex-end; margin-right:140px; letter-spacing:3px; max-width:570px;}
+.t3{position:sticky; top:170px; font-size:11px; margin-left:150px; text-align:justify;}
+.t4{position:sticky; top:175px; font-size:19px; align-self:flex-end; margin-right:426px; max-width:283px; text-align:justify;}
+.t5{position:sticky; top:260px; font-size:11px; margin-left:150px; text-align:justify;}
+.t6{position:sticky; top:150px; font-size:15px; margin-left:1007px; max-width:285px; text-align:justify;}
+.t7{position:sticky; top:463px; font-size:14px; align-self:flex-end; margin-right:425px; max-width:285px;text-align:justify;}
+.t8{position:sticky; top:365px; font-size:11px; margin-left:150px; text-align:justify;}
+.t9{position:sticky; top:380px; font-size:11px; margin-left:1007px; max-width:285px; letter-spacing:2px;text-align:justify; }
+.t10{position:sticky; top:600px; font-size:15px; align-self:flex-end; margin-right:145px; max-width:565px; letter-spacing:1px;text-align:justify;}
+.t11{position:sticky; top:440px; font-size:18px; margin-left:150px;text-align:justify;}
+.t12{position:sticky; top:468px; font-size:11px; align-self:flex-end; margin-right:140px; max-width:285px;text-align:justify;}
+.t13{position:sticky; top:174px; font-size:13px; margin-left:455px; max-width:270px; letter-spacing:5px; text-align:justify;}
+.t14{position:sticky; top:410px; font-size:12px; margin-left:455px; max-width:265px; text-align:justify;}
+.t15{position:sticky; top:510px; font-size:11px; margin-left:455px; max-width:262px; text-align:justify;}
+
+/* ===================== */
+/* TOGGLE SYSTEM         */
+/* ===================== */
+
+.toggle{
+    display:inline;
+    position:relative;
+}
+
+.toggle input{
+    display:none;
+}
+
+.toggle-text{
+    color:#0095ff;
+    cursor:pointer;
+    text-decoration:none;
+}
+
+.toggle-text:hover{
+    color: #fafce0;
+    background-color:#0095ff;
+}
+
+.toggle-img{
+    position: absolute;
+
+    top: calc(100% + 10px);
+    left: 0;
+
+    max-width: calc(100vw - 80px);
+    max-height: 70vh;
+
+    object-fit: contain;
+
+    opacity: 0;
+    transition: opacity 0.4s ease;
+
+    pointer-events: none;
+    z-index: 10;
+}
+
+/* TOGGLE ON/OFF */
+.toggle input:checked + .toggle-text + .toggle-img{
+    opacity:1;
+    pointer-events:auto;
+}
+
+/* CENTERED IMAGES */
+
+#img7:checked + label + .toggle-img,
+#img9:checked + label + .toggle-img,
+#img10:checked + label + .toggle-img{
+    
+    left:50%;
+    transform:translateX(-50%);
+}
+
+/* HIGHER IMAGES */
+
+#img15:checked + label + .toggle-img{
+
+    top:-290px;
+}
+
+/* FONT */
+@font-face {
+    font-family: "RL-Zeta-Mono";
+    src: url("RL-Zeta-Mono.otf") format("opentype");
+}
